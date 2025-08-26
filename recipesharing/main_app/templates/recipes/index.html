@@ -3,7 +3,8 @@
   <h1>Ricepe List</h1>
   {% for recipe in recipes %}
     <div class="card">
-      
+      <div class="card-content">
+      <a href="{% url 'detail' recipe.id %}">
                 <div class="flex-container">
             <div>
               <span class="card-title">{{ recipe.title }}</span>
@@ -16,6 +17,7 @@
             </div>
       </div>
     </div>
-    
+    </a>
+  </div>
         {% endfor %}
         {% endblock %}
