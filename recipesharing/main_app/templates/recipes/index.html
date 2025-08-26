@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Ricepe List</h1>
+  {% for recipe in recipes %}
+    <div class="card">
+      
+                <div class="flex-container">
+            <div>
+              <span class="card-title">{{ recipe.title }}</span>
+              <p>Ingredients: {{ recipe.ingredients }}</p>
+              <p>Description: {{ recipe.description }}</p>
+            </div>
+            <div>
+                {% load static %}
+                <img src="{% static recipe.image|cut:'main_app/static/' %}" width="100px" height="100px" alt="Recipe Image">
+            </div>
+      </div>
+    </div>
+    
+        {% endfor %}
+        {% endblock %}
