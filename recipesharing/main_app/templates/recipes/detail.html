@@ -14,6 +14,10 @@
                 <img src="{% static recipe.image|cut:'main_app/static/' %}" width="100px" height="100px" alt="Recipe Image">
             </div>
       </div>
+      <div class="card-action">
+        <a href="{% url 'recipes_update' recipe.id %}">Edit</a>
+        <a href="{% url 'recipes_delete' recipe.id %}">Delete</a>
+      </div>
     </div>
-  </div>
+  </div>  
   {% endblock %}
