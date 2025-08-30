@@ -20,4 +20,17 @@
       </div>
     </div>
   </div>  
+  
+  <h2>Comments</h2>
+  <form action="{% url 'add_comment' recipe.id %}" method="POST">
+    {% csrf_token %}
+    <textarea name="content"  placeholder="Add your comment here..."></textarea>
+    <br>
+    <input type="submit" value="Add Comment" class="btn" >
+  <ul>
+    {% for comment in recipe.comment_set.all %}
+      <li>{{ comment.content }}</li>
+    {% empty %}
+      <li>No comments yet.</li>
+    {% endfor %}
   {% endblock %}
