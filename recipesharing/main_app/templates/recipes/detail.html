@@ -6,6 +6,15 @@
 <div class="flex-container">
             <div>
               <span class="card-title">{{ recipe.title }}</span>
+              <h6>Category:</h6>
+              <ul>
+                {% for category in recipe.categories.all %}
+                  <li>
+                    {{ category.name }}
+                    {% empty %}
+                    <li>No categories yet.</li>
+                {% endfor %}
+              </ul>
               <p>Ingredients: {{ recipe.ingredients }}</p>
               <p>Description: {{ recipe.description }}</p>
             </div>
@@ -20,13 +29,17 @@
       </div>
     </div>
   </div>  
-
-  <div>
-      <form action="{% url 'add_comment' recipe.id %}" method="post">
-      {% csrf_token %}
-      {{ comment_form.as_p }}
-          <input type="submit" value="Add Comment " class="btn">
-        </form>
-  </div>
-
+  
+  <h2>Comments</h2>
+  <form action="{% url 'add_comment' recipe.id %}" method="POST">
+    {% csrf_token %}
+    <textarea name="content"  placeholder="Add your comment here..."></textarea>
+    <br>
+    <input type="submit" value="Add Comment" class="btn" >
+  <ul>
+    {% for comment in recipe.comment_set.all %}
+      <li>{{ comment.content }}</li>
+    {% empty %}
+      <li>No comments yet.</li>
+    {% endfor %}
   {% endblock %}
