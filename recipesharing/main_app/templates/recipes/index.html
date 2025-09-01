@@ -7,16 +7,9 @@
       <a href="{% url 'detail' recipe.id %}">
                 <div class="flex-container">
             <div>
+              <h5>Name: {{recipe.user.username}}</h5>
               <span class="card-title">{{ recipe.title }}</span>
-              <h6>Category:</h6>
-              <ul>
-                {% for category in recipe.categories.all %}
-                  <li>
-                    {{ category.name }}
-                    {% empty %}
-                    <li>No categories yet.</li>
-                {% endfor %}
-              </ul>
+              <h6>Category:{{  recipe.get_category_display }}</h6> 
               <p>Ingredients: {{ recipe.ingredients }}</p>
               <p>Description: {{ recipe.description }}</p>
             </div>

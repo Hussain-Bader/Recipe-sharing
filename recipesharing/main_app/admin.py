@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recipe , Comment , Category
+from .models import Recipe , Comment, Category , User
 # Register your models here.
 
 admin.site.register(Recipe)

@@ -11,6 +11,6 @@ urlpatterns = [
     path('recipes/<int:pk>/delete/', views.RecipeDelete.as_view(), name='recipes_delete'),
     path('recipes/<int:recipe_id>/add_comment/', views.add_comment, name='add_comment'),
     path('recipes/<int:recipe_id>/add_category/', views.add_category, name='add_category'),
-    path('recipes/<int:recipe_id>/assoc_category/<int:category_id>/',views.assoc_category, name='assoc_category'),
-    path('recipes/<int:recipe_id>/unassoc_category/<int:category_id>/',views.unassoc_category, name='unassoc_category')
+    path('recipes/recipes_list', views.recipe_list, name='recipes_list'),
+    path('accounts/signup/', views.signup , name='signup')
 ]
