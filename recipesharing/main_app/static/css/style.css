@@ -19,9 +19,66 @@ footer.page-footer {
 }
 
 .nav-wrapper {
-  background-color: rgb(151, 158, 158) !important;
+  background-color: rgb(223, 188, 76) !important;
 }
 
 .page-footer {
-  background-color: rgb(151, 158, 158) !important;
+  background-color: rgb(223, 188, 76) !important;
+}
+
+input[type="text"], input[type="search"], textarea {
+    color: #000000; 
+    background-color: #fdf6ee; 
+}
+
+strong {
+  color:#000000
+}
+
+textarea::placeholder{
+  color: purple
+}
+
+
+.logout-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+
+
+h5,h6,span,p{
+  color: #000000;
+}
+
+img{
+  border-radius: 8px;
+}
+
+.card .card-content {
+  background-color:  rgb(240, 222, 164);
+}
+
+input[type="file"]::file-selector-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+}
+
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #1e8379;
 }

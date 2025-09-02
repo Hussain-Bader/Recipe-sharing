@@ -24,11 +24,13 @@
             <li><a href="{% url 'index' %}">View Recipes</a></li>
             <li><a href="{% url 'recipes_list' %}">Search</a></li>
             <li>
-            <form action="{% url 'logout' %}" method="post">
-              {% csrf_token %}
-                <button type="submit">Logout</button>
-            </form>
-          </li>
+  <form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <li><a>
+      <button type="submit" class="nav-link logout-button">Logout</button>
+    </a></li>
+  </form>
+</li>
           {% else %}
           <li><a href="{% url 'signup' %}">Signup</a></li>
           <li><a href="{% url 'login' %}">Login</a></li>

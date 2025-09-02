@@ -41,9 +41,9 @@ def recipes_detail(request, recipe_id):
 @login_required
 def add_comment(request, recipe_id):
     content = request.POST.get('content')
-    new_comment = Comment(content=content, recipe_id=recipe_id)
+    new_comment = Comment(content=content, recipe_id=recipe_id,user=request.user)
     new_comment.save()
-    return redirect('detail', recipe_id=recipe_id)
+    return redirect('detail', recipe_id =recipe_id)
 
 
 def add_category(request, recipe_id):

@@ -2,7 +2,7 @@
 {% block content %}
 <form method="GET" action="">
   <input type="text" name="q" placeholder="Search recipes or categories..." value="{{ request.GET.q }}" class="btn" >
-  <button type="submit">Search</button>
+  <button type="submit" class="btn" style="background-color: royalblue;">Search</button>
 </form>
 
   {% for recipe in recipes %}
@@ -11,7 +11,7 @@
   <a href="{% url 'detail' recipe.id %}">
     <div class="flex-container">
       <div>
-      <strong>{{ recipe.title }}</strong> (Category: {{ recipe.get_category_display }})
+      <strong>{{ recipe.title }}</strong> <h6 style="color: darkgoldenrod;">(Category: {{ recipe.get_category_display }})</h6>
     </div>
       <div>
                 {% load static %}

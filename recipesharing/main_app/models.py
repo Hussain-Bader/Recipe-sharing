@@ -30,7 +30,8 @@ class Recipe(models.Model):
 class Comment(models.Model):
     content = models.TextField(max_length=200)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     def __str__(self):
         return self.content
 
