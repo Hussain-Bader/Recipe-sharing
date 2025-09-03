@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Recipe , Comment
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .forms import RecipeForm
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
@@ -11,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class RecipeCreate(LoginRequiredMixin,CreateView):
     model=Recipe
-    form_class = RecipeForm
+    fields = ['title', 'ingredients', 'description', 'image', 'category']
     
     def form_valid(self , form):
         form.instance.user = self.request.user
@@ -19,7 +18,7 @@ class RecipeCreate(LoginRequiredMixin,CreateView):
 
 class RecipeUpdate(LoginRequiredMixin,UpdateView):
     model=Recipe
-    form_class = RecipeForm
+    fields = ['title', 'ingredients', 'description', 'image', 'category']
 
 
 class RecipeDelete(LoginRequiredMixin,DeleteView):
