@@ -5,6 +5,9 @@
 ## 📝 Description 
 Recipe Sharing is a web app that you can share your recipe on it . It was built to make it easier for people to find, save, and share cooking recipes.
 
+## ERD
+![alt text](image.png)
+
 ## 🚀 Getting Started
 Live App: 🌐 https://recipe-sharing-7122dcac85c6.herokuapp.com/
 
